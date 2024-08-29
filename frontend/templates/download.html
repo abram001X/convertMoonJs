@@ -1,0 +1,170 @@
+{% extends 'index.html' %} {%block body%}
+<section class="contenedor_padre">
+  {%if dato%}
+  <form method="post">
+    <h1 class="title_1">
+      Convertidor de Videos
+      <svg
+        class="icon_title"
+        xmlns="http://www.w3.org/2000/svg"
+        height="48px"
+        viewBox="0 -960 960 960"
+        width="48px"
+        fill="#e8eaed"
+      >
+        <path
+          d="M450-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h170v60H280q-58.33 0-99.17 40.76-40.83 40.77-40.83 99Q140-422 180.83-381q40.84 41 99.17 41h170v60ZM325-450v-60h310v60H325Zm185 170v-60h170q58.33 0 99.17-40.76 40.83-40.77 40.83-99Q820-538 779.17-579q-40.84-41-99.17-41H510v-60h170q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H510Z"
+        />
+      </svg>
+    </h1>
+    <section class="contenedor_mp3" id="contenedor">
+      <label for="link"
+        >Ingresa una Url de Youtube para convertirlo en formato mp4 o
+        mp3</label
+      >
+      <input name="link" id="link" type="text" value="{{dato.link}}" class="input_download" placeholder="Convertir"/>
+      <button class="convert_button">
+        Convertir Link
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#e8eaed"
+        >
+          <path
+            d="M330-240q-104 0-177-73T80-490q0-104 73-177t177-73h370q75 0 127.5 52.5T880-560q0 75-52.5 127.5T700-380H350q-46 0-78-32t-32-78q0-46 32-78t78-32h370v80H350q-13 0-21.5 8.5T320-490q0 13 8.5 21.5T350-460h350q42-1 71-29.5t29-70.5q0-42-29-71t-71-29H330q-71-1-120.5 49T160-490q0 70 49.5 119T330-320h390v80H330Z"
+          />
+        </svg>
+      </button>
+    </section>
+  </form>
+  <!--Descargar a mp4-->
+  <section class="cont_download_convert">
+    <section class="convert">
+      <div class="cont_data">
+        <div class="cont_img">
+          <img src="{{dato.url}}" class="img" />
+        </div>
+        <b class="dr">{{dato.duration}}</b>
+        <div class="cont_data-child">
+          <p>{{dato.title}}</p>
+          <b>{{dato.autor}}</b><br />
+          <b>{{dato.views}} visualizaciones</b>
+        </div>
+      </div>
+      <div class="cont_format">
+        <!--Descargar video-->
+        <div class="mp4">
+          <a href="/apjsdabram/mp4,{{dato.video_id}}"
+            ><button class="button_svg" >Descargar video</button></a
+          >
+        </div>
+        <!--Descargar audio-->
+        <div>
+          <a href="/apjsdabram/mp3,{{dato.video_id}}" 
+            ><button class="button_svg">Descargar audio</button></a
+          >
+        </div>
+      </div>
+    </section>
+    
+  </section>
+  <footer class="footer" >
+    <p>© 2024 AbrahamAlfonzo</p>
+    <p>abrahamalfonzo11@gmail.com</p>
+    <p>© 2024 ConvertMoon -Convertidor de uso personal</p>
+  </footer>
+  {%elif regex%}
+  
+  <form method="post">
+    <h1 class="title_1">
+      Convertidor de Videos
+      <svg
+        class="icon_title"
+        xmlns="http://www.w3.org/2000/svg"
+        height="48px"
+        viewBox="0 -960 960 960"
+        width="48px"
+        fill="#e8eaed"
+      >
+        <path
+          d="M450-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h170v60H280q-58.33 0-99.17 40.76-40.83 40.77-40.83 99Q140-422 180.83-381q40.84 41 99.17 41h170v60ZM325-450v-60h310v60H325Zm185 170v-60h170q58.33 0 99.17-40.76 40.83-40.77 40.83-99Q820-538 779.17-579q-40.84-41-99.17-41H510v-60h170q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H510Z"
+        />
+      </svg>
+    </h1>
+    <section class="contenedor_mp3" id="contenedor">
+      <label for="link"
+        >Ingresa una Url de Youtube para convertirlo en formato mp4 o
+        mp3</label
+      >
+      <input name="link" id="link" type="text" placeholder="{{regex}}"  class="input_regex"/>
+      <button class="convert_button">
+        Convertir Link
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#e8eaed"
+        >
+          <path
+            d="M330-240q-104 0-177-73T80-490q0-104 73-177t177-73h370q75 0 127.5 52.5T880-560q0 75-52.5 127.5T700-380H350q-46 0-78-32t-32-78q0-46 32-78t78-32h370v80H350q-13 0-21.5 8.5T320-490q0 13 8.5 21.5T350-460h350q42-1 71-29.5t29-70.5q0-42-29-71t-71-29H330q-71-1-120.5 49T160-490q0 70 49.5 119T330-320h390v80H330Z"
+          />
+        </svg>
+      </button>
+    </section>
+  </form>
+  <br><br>
+  <a href="/search" class="buscar"><p>Buscar video <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+ </p></a> 
+  {%else%}
+  <!--Convertir link-->
+  <form method="post">
+    <h1 class="title_1">
+      Convertidor de Videos
+      <svg
+        class="icon_title"
+        xmlns="http://www.w3.org/2000/svg"
+        height="48px"
+        viewBox="0 -960 960 960"
+        width="48px"
+        fill="#e8eaed"
+      >
+        <path
+          d="M450-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h170v60H280q-58.33 0-99.17 40.76-40.83 40.77-40.83 99Q140-422 180.83-381q40.84 41 99.17 41h170v60ZM325-450v-60h310v60H325Zm185 170v-60h170q58.33 0 99.17-40.76 40.83-40.77 40.83-99Q820-538 779.17-579q-40.84-41-99.17-41H510v-60h170q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H510Z"
+        />
+      </svg>
+    </h1>
+    <section class="contenedor_mp3" id="contenedor">
+      <label for="link"
+        >Ingresa una Url de Youtube para convertirlo en formato mp4 o
+        mp3</label
+      >
+      <input name="link" id="link" type="text"  placeholder="URL"/>
+      <button class="convert_button">
+        Convertir Link
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#e8eaed"
+        >
+          <path
+            d="M330-240q-104 0-177-73T80-490q0-104 73-177t177-73h370q75 0 127.5 52.5T880-560q0 75-52.5 127.5T700-380H350q-46 0-78-32t-32-78q0-46 32-78t78-32h370v80H350q-13 0-21.5 8.5T320-490q0 13 8.5 21.5T350-460h350q42-1 71-29.5t29-70.5q0-42-29-71t-71-29H330q-71-1-120.5 49T160-490q0 70 49.5 119T330-320h390v80H330Z"
+          />
+        </svg>
+      </button>
+    </section>
+  </form>
+  <br><br>
+  <a href="/search" class="buscar"><p>Buscar video <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+ </p></a> 
+  {%endif%}
+
+{% endblock %}
