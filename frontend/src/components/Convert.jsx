@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 export function Convert() {
   const [videoId, setvideoId] = useState();
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(true);
   const navigate = useNavigate();
   
   const handleSubmit = () => {
@@ -48,6 +48,7 @@ export function Convert() {
               type="text"
               placeholder="Convertir"
               onChange={(e) => {
+                setError(false)
                 if (e.target.value.includes('&')) {
                   return setvideoId(
                     e.target.value.slice(

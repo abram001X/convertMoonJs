@@ -178,13 +178,22 @@ input{
     justify-content: center;
     align-items: center;
 }
-.cont_data, .cont_format{
+.cont_data{ 
     padding:30px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50%;
     width: 100%;
+}
+.cont_format{
+    padding:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 60%;
+    margin: auto;
 }
 .cont_data-child{
     height: 170px;
@@ -245,6 +254,41 @@ button:hover{
 .buscar:Hover{
     color: #ccc;
 }
+.p_pasos{
+    width: 40ch;
+    margin-left: 30px;
+}
+.cont_pasos{
+    display: flex;
+    align-items: center;
+    margin: 50px 0px;
+}
+.pasos_padre{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img_pasos{
+    width: 250px;
+    height: 150px;
+}
+.icon_load{
+    color: #666;
+    animation: loading 2.5s linear infinite;
+    margin-top: 200px;
+    font-size: 100px;
+  }
+  @keyframes loading {
+    0%{
+      transform: rotate(50deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
 @media screen and (max-width: 830px){
     .download_search{
         width: 100%;

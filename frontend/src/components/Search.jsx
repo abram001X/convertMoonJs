@@ -62,9 +62,10 @@ export function Search() {
             }}
           />
           <button className="buscar-boton">Buscar</button>
-          {apiSearch ? <DownloadSearch dato={apiSearch} /> : ''}
         </section>
       </form>
+      
+      {apiSearch ? <DownloadSearch dato={apiSearch} /> : ''}
     </section>
   );
 }

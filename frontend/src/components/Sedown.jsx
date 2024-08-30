@@ -1,8 +1,7 @@
+import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 export function DownloadSearch({ dato }) {
-  
-  
   return (
     <section className="contenedor_padre">
       {dato.data.map((obj, i) => {
@@ -20,19 +19,13 @@ export function DownloadSearch({ dato }) {
               <p>{obj.title}</p>
               <b>{obj.channelTitle}</b>
               <br />
-              <b>{obj.viewCount} visualizaciones</b>
               <br />
               <b className="fecha_b">{obj.publishedTimeText}</b>
             </div>
             <div className="button_download">
-              <p htmlFor="">.MP4</p>
-              <a download href="/">
-                <button>Descargar</button>
-              </a>
-              <p htmlFor="">.MP3</p>
-              <a download href="/">
-                <button>Descargar</button>
-              </a>
+              <Link to={`/download/${obj.videoId}`}>
+                <button>Convertir video</button>
+              </Link>
             </div>
           </section>
         );}

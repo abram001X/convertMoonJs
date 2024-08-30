@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Convert } from './components/Convert.jsx';
 import { Search } from './components/Search.jsx';
 import { Download } from './components/download.jsx';
+import { Steps } from './components/Steps.jsx';
 function App() {
   return (
     <>
@@ -54,6 +55,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path='/download/:id' element={<Download/>}/>
       </Routes>
+      <Steps/>
       <footer className="footer">
         <p>© 2024 AbrahamAlfonzo</p>
         <p>abrahamalfonzo11@gmail.com</p>
