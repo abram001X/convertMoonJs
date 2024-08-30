@@ -3,6 +3,7 @@ import './css/style.css';
 import { Routes, Route } from 'react-router-dom';
 import { Convert } from './components/Convert.jsx';
 import { Search } from './components/Search.jsx';
+import { Download } from './components/download.jsx';
 function App() {
   return (
     <>
@@ -51,6 +52,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Convert />} />
         <Route path="/search" element={<Search />} />
+        <Route path='/download/:id' element={<Download/>}/>
       </Routes>
       <footer className="footer">
         <p>© 2024 AbrahamAlfonzo</p>

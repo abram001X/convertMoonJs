@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DownloadSearch } from './DownloadSearch';
+import { DownloadSearch } from './Sedown';
 
 const KEY = import.meta.env.VITE_API_KEY;
 export function Search() {

@@ -1,47 +1,20 @@
 import { useState } from 'react';
-import { Download } from './download';
-
-const KEY = import.meta.env.VITE_API_KEY;
+import { useNavigate } from 'react-router-dom';
 export function Convert() {
-  const [apiYoutu, setApiYoutu] = useState();
   const [videoId, setvideoId] = useState();
-  const [apiMp3, setApimp3] = useState();
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+  
   const handleSubmit = () => {
     console.log(videoId);
-
-    const fetching = async () => {
-      const resMp4 = await fetch(
-        `https://yt-api.p.rapidapi.com/dl?id=${videoId}`,
-        {
-          method: 'GET',
-          headers: {
-            'x-rapidapi-key': `${KEY}`,
-            'x-rapidapi-host': 'yt-api.p.rapidapi.com'
-          }
-        }
-      );
-      const dataMp4 = await resMp4.json();
-      const resMp3 = await fetch(
-        `https://youtube-mp36.p.rapidapi.com/dl?id=${videoId}`,
-        {
-          method: 'GET',
-          headers: {
-            'x-rapidapi-key': `${KEY}`,
-            'x-rapidapi-host': 'youtube-mp36.p.rapidapi.com'
-          }
-        }
-      );
-      const dataMp3 = await resMp3.json();
-
-      setApiYoutu(dataMp4);
-      setApimp3(dataMp3);
-    };
-    fetching();
+    if (error) {
+      return setError(true)
+    } 
+    else {
+      navigate(`download/${videoId}`) 
+    }
   };
-  console.log(videoId);
 
-  console.log(apiYoutu);
-  console.log(apiMp3);
   return (
     <>
       <section className="contenedor_padre">
@@ -73,7 +46,7 @@ export function Convert() {
               name="link"
               id="link"
               type="text"
-              placeholder='Convertir'
+              placeholder="Convertir"
               onChange={(e) => {
                 if (e.target.value.includes('&')) {
                   return setvideoId(
@@ -83,15 +56,20 @@ export function Convert() {
                     )
                   );
                 }
-                return setvideoId(
+                else if (e.target.value.includes('=')){
+                  setvideoId(
                   e.target.value.slice(
                     e.target.value.indexOf('=') + 1,
                     e.target.value.length
                   )
-                )
+                );}
+                else{
+                  setError(true)
+                  setvideoId('Ingresa una url válida')
+                }
               }}
             />
-            <p className='p_error'>{apiYoutu && apiMp3 ? apiYoutu.status == 'fail' || apiMp3.status == 'fail' ? 'Ingresa una url válida' : '':''}</p>
+            <p className="p_error">{error ? videoId: ''}</p>
             <button className="convert_button">
               Convertir Link
               <svg
@@ -126,7 +104,6 @@ export function Convert() {
           </p>
         </a>
       </section>
-      {apiYoutu && apiMp3 ? apiYoutu.status != 'fail' || apiMp3.status != 'fail' ? <Download dato={apiYoutu} audio={apiMp3} /> : '': ''}
     </>
   );
 }
