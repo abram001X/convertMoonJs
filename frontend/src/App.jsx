@@ -3,7 +3,7 @@ import './css/style.css';
 import { Routes, Route } from 'react-router-dom';
 import { Convert } from './components/Convert.jsx';
 import { Search } from './components/Search.jsx';
-import { Download } from './components/download.jsx';
+import { Download } from './components/Download.jsx';
 import { Steps } from './components/Steps.jsx';
 function App() {
   return (
