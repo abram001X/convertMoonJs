@@ -1,6 +1,7 @@
-.env
+*.env
 Notas
 /Notas
+dist
 # Logs
 logs
 *.log

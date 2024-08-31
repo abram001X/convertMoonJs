@@ -137,7 +137,7 @@ export function Download() {
           <section className="convert">
             <div className="cont_data">
               <div className="cont_img">
-                <img src="{dato.thumbnail[2].url}" className="img" />
+                <img src={dato.thumbnail[2].url} className="img" />
               </div>
               <b className="dr">{dato.lengthSeconds}s</b>
               <div className="cont_data-child">
