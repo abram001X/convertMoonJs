@@ -272,8 +272,23 @@ button:hover{
     align-items: center;
 }
 .img_pasos{
+    background-size:250px,150px;
     width: 250px;
     height: 150px;
+    background-position: cover;
+    background-repeat: no-repeat;
+    transition: .3s;
+}
+.img_pasos:hover{
+    background-size:400px,250px;
+    width: 400px;
+    height: 250px;
+}
+.paso1{
+    background-image: url('C:\Users\abrah\OneDrive\Escritorio\Programacion\PROYECTOS\convertMoonJs\frontend\src\img\paso1.png');
+}
+.paso2{
+    background-image: url('C:\Users\abrah\OneDrive\Escritorio\Programacion\PROYECTOS\convertMoonJs\frontend\src\img\Opera Instantánea_2024-08-31_203614_rr2---sn-pouxgj5cax-jjnl.googlevideo.com.png');
 }
 .icon_load{
     color: #666;
