@@ -48,7 +48,7 @@ export function Search() {
           </svg>
         </h1>
         <section className="contenedor_mp3">
-          <label htmlFor="search" id="search" name="search">
+          <label  id="search" name="search">
             Busca un vídeo para descargar
           </label>
           <input
