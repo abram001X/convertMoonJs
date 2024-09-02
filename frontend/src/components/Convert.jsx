@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 export function Convert() {
   const [videoId, setvideoId] = useState();
   const [error, setError] = useState(true);
@@ -87,7 +87,7 @@ export function Convert() {
         </form>
         <br />
         <br />
-        <a href="/convertMoonJs/search" className="buscar">
+        <Link to="/search" className="buscar">
           <p>
             Buscar video{' '}
             <svg
@@ -103,7 +103,7 @@ export function Convert() {
               />
             </svg>
           </p>
-        </a>
+        </Link>
       </section>
     </>
   );
