@@ -87,7 +87,7 @@ export function Convert() {
         </form>
         <br />
         <br />
-        <a href="/search" className="buscar">
+        <a href="/convertMoonJs/search" className="buscar">
           <p>
             Buscar video{' '}
             <svg

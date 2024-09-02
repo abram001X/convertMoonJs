@@ -10,7 +10,7 @@ function App() {
     <>
       <menu className="menu">
         <div>
-          <a href="/" className="title-menu">
+          <a href="/convertMoonJs" className="title-menu">
             ConvertMoon
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ function App() {
           </a>
         </div>
         <div className="child-menu">
-          <a href="/search">
+          <a href="/convertMoonJs/search">
             Buscar video{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ function App() {
               <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
             </svg>
           </a>
-          <a href="/" className="Inicio">
+          <a href="/convertMoonJs" className="Inicio">
             Inicio{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,9 +51,9 @@ function App() {
         </div>
       </menu>
       <Routes>
-        <Route path='/' element={<Convert />} />
-        <Route path="/search" element={<Search />} />
-        <Route path='/download/:id' element={<Download/>}/>
+        <Route path='/convertMoonJs' element={<Convert />} />
+        <Route path='/convertMoonJs/search' element={<Search />} />
+        <Route path='/convertMoonJs/download/:id' element={<Download/>}/>
       </Routes>
       <Steps/>
       <footer className="footer">
