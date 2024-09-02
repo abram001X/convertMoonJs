@@ -56,6 +56,14 @@ export function Convert() {
                       e.target.value.indexOf('&')
                     )
                   );
+                }else if(e.target.value.includes('youtu.be')){
+                  setvideoId(
+                    e.target.value.slice(
+                      e.target.value.lastIndexOf('/') + 1,
+                      e.target.value.indexOf('?')
+                    )
+                  );
+                  console.log(videoId)
                 }
                 else if (e.target.value.includes('=')){
                   setvideoId(

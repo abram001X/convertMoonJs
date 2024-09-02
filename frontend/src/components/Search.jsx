@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { DownloadSearch } from './Sedown';
+import { Loading } from './Loading';
 
 const KEY = import.meta.env.VITE_API_KEY;
 export function Search() {
   const [searchId, setSearchId] = useState();
   const [apiSearch, setApiSearch] = useState();
+  const [isLoading, setIsLoading] = useState();
   const handleSubmit = () => {
     const fetching = async () => {
+      setIsLoading(true)
       const resSearch = await fetch(
         `https://yt-api.p.rapidapi.com/search?query=${searchId}`,
         {
@@ -19,12 +22,20 @@ export function Search() {
       );
       const dataSearch = await resSearch.json();
       setApiSearch(dataSearch);
+      setIsLoading(false)
     };
     fetching();
   };
   console.log(apiSearch);
-  
-  return (
+
+  if (isLoading) {
+    return (
+      <section className="contenedor_padre">
+        <Loading /> 
+      </section>
+    );
+  }
+  else return (
     <section className="contenedor_padre">
       <form
         action=""
@@ -48,7 +59,7 @@ export function Search() {
           </svg>
         </h1>
         <section className="contenedor_mp3">
-          <label  id="search" name="search">
+          <label id="search" name="search">
             Busca un vídeo para descargar
           </label>
           <input
@@ -64,7 +75,7 @@ export function Search() {
           <button className="buscar-boton">Buscar</button>
         </section>
       </form>
-      
+
       {apiSearch ? <DownloadSearch dato={apiSearch} /> : ''}
     </section>
   );

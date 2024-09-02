@@ -264,7 +264,7 @@ button:hover{
     margin: 50px 0px;
 }
 .pasos_padre{
-    width: 70%;
+    width: 500px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -279,11 +279,7 @@ button:hover{
     background-repeat: no-repeat;
     transition: .3s;
 }
-.img_pasos:hover{
-    background-size:400px,250px;
-    width: 400px;
-    height: 250px;
-}
+
 .paso1{
     background-image: url('C:\Users\abrah\OneDrive\Escritorio\Programacion\PROYECTOS\convertMoonJs\frontend\src\img\paso1.png');
 }
@@ -314,7 +310,19 @@ button:hover{
     .contenedor_mp3{
         width: 100%;
     }
-    
+    .download_search{
+        width: 500px;
+    }
+    .h2_pasos{
+        font-size: 20px;
+    }
+    .pasos_padre{
+        width: 500px;
+        font-size: 15px;
+    }
+    .cont_pasos{
+        flex-direction: column;
+    }
     button{
         width: 100px;
     }
@@ -354,5 +362,26 @@ button:hover{
     .button_download button{
         font-size: 12px;
         width: 70px;
+    }
+}
+@media screen and (max-width: 520px){
+    .pasos_padre{
+        width: 250px;
+        font-size: 12px;
+    }
+    .cont_format{
+        padding: 0;
+        height: 50%;
+        width: 100%;
+        font-size: 15px;
+    }
+    .download_search{
+        width: 250px;
+    }
+    .cont_img{
+        width: 500px;
+    }
+    .button_download{
+        width: 60px;
     }
 }
