@@ -281,10 +281,10 @@ button:hover{
 }
 
 .paso1{
-    background-image: url('C:\Users\abrah\OneDrive\Escritorio\Programacion\PROYECTOS\convertMoonJs\frontend\src\img\paso1.png');
+    background-image: url('https://github.com/abram001X/convertMoonJs/blob/main/frontend/src/img/paso1.png?raw=true');
 }
 .paso2{
-    background-image: url('C:\Users\abrah\OneDrive\Escritorio\Programacion\PROYECTOS\convertMoonJs\frontend\src\img\Opera Instantánea_2024-08-31_203614_rr2---sn-pouxgj5cax-jjnl.googlevideo.com.png');
+    background-image: url('https://github.com/abram001X/convertMoonJs/blob/main/frontend/src/img/Opera%20Instant%C3%A1nea_2024-08-31_203614_rr2---sn-pouxgj5cax-jjnl.googlevideo.com.png?raw=true');
 }
 .icon_load{
     color: #666;
