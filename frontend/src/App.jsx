@@ -1,6 +1,6 @@
 import './css/normalize.css';
 import './css/style.css';
-import { Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as  Routes, Route, Link } from 'react-router-dom';
 import { Convert } from './components/Convert.jsx';
 import { Search } from './components/Search.jsx';
 import { Download } from './components/Download.jsx';
