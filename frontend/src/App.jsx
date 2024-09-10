@@ -1,6 +1,6 @@
 import './css/normalize.css';
 import './css/style.css';
-import { HashRouter as  Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as  Router, Route, Link } from 'react-router-dom';
 import { Convert } from './components/Convert.jsx';
 import { Search } from './components/Search.jsx';
 import { Download } from './components/Download.jsx';
@@ -50,11 +50,11 @@ function App() {
           </Link>
         </div>
       </menu>
-      <Routes>
+      <Router>
         <Route path='/' element={<Convert />} />
         <Route path='/search' element={<Search />} />
         <Route path='/download/:id' element={<Download/>}/>
-      </Routes>
+      </Router>
       <Steps/>
       <footer className="footer">
         <p>© 2024 AbrahamAlfonzo</p>
