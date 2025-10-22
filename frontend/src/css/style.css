@@ -187,11 +187,10 @@ input{
     width: 100%;
 }
 .cont_format{
-    padding:30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 30%;
     width: 60%;
     margin: auto;
 }

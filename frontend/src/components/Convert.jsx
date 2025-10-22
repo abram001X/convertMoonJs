@@ -1,17 +1,16 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { getIdYt } from "../lib/geitIdYt";
 export function Convert() {
   const [videoId, setvideoId] = useState();
   const [error, setError] = useState(true);
   const navigate = useNavigate();
-  
+
   const handleSubmit = () => {
-    console.log(videoId);
     if (error) {
-      return setError(true)
-    } 
-    else {
-      navigate(`download/${videoId}`) 
+      return setError(true);
+    } else {
+      navigate(`/download/${videoId}`);
     }
   };
 
@@ -48,37 +47,15 @@ export function Convert() {
               type="text"
               placeholder="Convertir"
               onChange={(e) => {
-                setError(false)
-                if (e.target.value.includes('&')) {
-                  return setvideoId(
-                    e.target.value.slice(
-                      e.target.value.indexOf('=') + 1,
-                      e.target.value.indexOf('&')
-                    )
-                  );
-                }else if(e.target.value.includes('youtu.be')){
-                  setvideoId(
-                    e.target.value.slice(
-                      e.target.value.lastIndexOf('/') + 1,
-                      e.target.value.indexOf('?')
-                    )
-                  );
-                  console.log(videoId)
+                setError(false);
+                const id = getIdYt(e.target.value);
+                if (id === "Ingresa una url válida") {
+                  setError(true);
                 }
-                else if (e.target.value.includes('=')){
-                  setvideoId(
-                  e.target.value.slice(
-                    e.target.value.indexOf('=') + 1,
-                    e.target.value.length
-                  )
-                );}
-                else{
-                  setError(true)
-                  setvideoId('Ingresa una url válida')
-                }
+                setvideoId(id);
               }}
             />
-            <p className="p_error">{error ? videoId: ''}</p>
+            <p className="p_error">{error ? videoId : ""}</p>
             <button className="convert_button">
               Convertir Link
               <svg
@@ -97,7 +74,7 @@ export function Convert() {
         <br />
         <Link to="/search" className="buscar">
           <p>
-            Buscar video{' '}
+            Buscar video{" "}
             <svg
               width="24"
               height="24"
