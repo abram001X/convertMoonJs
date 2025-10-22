@@ -23,7 +23,6 @@ export function Download() {
       setApiVideo(dataMp4);
       setAudio(dataMp3);
       setIsLoading(false);
-      console.log(dataMp4)
     }
   };
   if (isLoading) {
